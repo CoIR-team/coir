@@ -3,7 +3,7 @@
 
 
 # simple use
-'''
+```python
 import coir
 from coir.models import YourCustomDEModel
 
@@ -21,5 +21,5 @@ evaluation = coir.COIR(tasks=tasks)
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
+```
 
-'''
