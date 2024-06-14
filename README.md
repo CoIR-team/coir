@@ -8,7 +8,9 @@ We constructed CoIR with diverse datasets and evaluated nine popular retrieval m
 
 Our goal with CoIR is to advance research in code retrieval, offering a versatile tool that encourages the development and exploration of code retrieval systems.
 
-# 
+## Data Availability
+
+All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval)
 
 
 ### Statistics of datasets in coir benchmark
