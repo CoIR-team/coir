@@ -2,7 +2,7 @@
 
 
 
-### Statistics of datasets in \name benchmark
+### Statistics of datasets in coir benchmark
 \# is the quantity of query/corpus instances. \(L_{(\cdot)}\) refers to the average numbers of words per query/corpus. Datasets marked by \(^\dag\) are created by us.
 
 | **Main Task**                | **Sub Task**                       | **Domain**     | **Dataset**                  | **Language**                                   | **#Query (train/dev/test)** | **#Corpus** | **\(L_{\text{Query}}\)** | **\(L_{\text{Corpus}}\)** |
