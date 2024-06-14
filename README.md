@@ -28,26 +28,61 @@ Our goal with CoIR is to advance research in code retrieval, offering a versatil
 |                              | Multi-turn Code QA                 | Code Instruction | CodeFeeback-MT               | miscellaneous                                  | 53k/-/13K                   | 66K         | 4.4K                    | 1.5K                      |
 
 
+## Simple Use
+
+1. Download this GitHub repository
+
+    ```python
+    import coir
+    from coir.models import YourCustomDEModel
+
+    model_name = "intfloat/e5-base-v2"
+
+    # Load the model
+    model = YourCustomDEModel(model_name=model_name)
+
+    # Get tasks
+    tasks = coir.get_tasks(tasks=["stackoverflow-qa"])
+
+    # Initialize evaluation
+    evaluation = coir.COIR(tasks=tasks)
+
+    # Run evaluation
+    results = evaluation.run(model, output_folder=f"results/{model_name}")
+    print(results)
+    ```
+
+## Using the Python Package
+
+1. Install the `coir-evaluate` package
+
+    ```bash
+    pip install coir-evaluate
+    ```
+
+2. Use the following code to run the evaluation
+
+    ```python
+    import coir_evaluate as coir
+    from coir.data_loader import get_tasks
+    from coir.evaluation import COIR
+    from coir.models import YourCustomDEModel
+
+    model_name = "intfloat/e5-base-v2"
+
+    # Load the model
+    model = YourCustomDEModel(model_name=model_name)
+
+    # Get tasks
+    tasks = get_tasks(tasks=["stackoverflow-qa"])
+
+    # Initialize evaluation
+    evaluation = COIR(tasks=tasks)
+
+    # Run evaluation
+    results = evaluation.run(model, output_folder=f"results/{model_name}")
+    print(results)
+    ```
 
 
-# simple use
-```python
-import coir
-from coir.models import YourCustomDEModel
-
-model_name = "intfloat/e5-base-v2"
-
-# Load the model
-model = YourCustomDEModel(model_name=model_name)
-
-# Get tasks
-tasks = coir.get_tasks(tasks=["stackoverflow-qa"])
-
-# Initialize evaluation
-evaluation = coir.COIR(tasks=tasks)
-
-# Run evaluation
-results = evaluation.run(model, output_folder=f"results/{model_name}")
-print(results)
-```
 
