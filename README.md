@@ -1,4 +1,13 @@
-# coir
+### Introduction to CoIR
+
+Despite the success of Information Retrieval (IR) in various NLP tasks, most IR systems focus on natural language, neglecting code retrieval. Code retrieval is crucial but under-explored, with existing methods and benchmarks failing to capture the diversity of code across different domains and tasks.
+
+To address this, we present **CoIR** (**Co**de **I**nformation **R**etrieval Benchmark), a comprehensive benchmark designed to evaluate code retrieval capabilities. CoIR includes **ten** curated code datasets, covering **eight** retrieval tasks across **seven** domains.
+
+We constructed CoIR with diverse datasets and evaluated nine popular retrieval models, revealing significant challenges in code retrieval even for state-of-the-art systems. CoIR is a user-friendly Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
+
+Our goal with CoIR is to advance research in code retrieval, offering a versatile tool that encourages the development and exploration of code retrieval systems.
+
 
 
 
