@@ -32,6 +32,8 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 ## Simple Use
 
+python>3.8
+
 1. Download this GitHub repository
 
     ```python
