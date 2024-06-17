@@ -1,8 +1,8 @@
 import os
 import json
 import logging
-from beir.retrieval.evaluation import EvaluateRetrieval
-from beir.retrieval.search.dense import DenseRetrievalExactSearch as DRES
+from coir.beir.retrieval.evaluation import EvaluateRetrieval
+from coir.beir.retrieval.search.dense import DenseRetrievalExactSearch as DRES
 
 logger = logging.getLogger(__name__)
 
