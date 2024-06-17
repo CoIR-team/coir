@@ -30,9 +30,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 |                              | Multi-turn Code QA                 | Code Instruction | CodeFeeback-MT               | miscellaneous                                  | 53k/-/13K                   | 66K         | 4.4K                    | 1.5K                      |
 
 
-## Simple Use
-
-python>3.8
+## Simple Use（python>3.8）
 
 1. Download this GitHub repository
 
