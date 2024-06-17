@@ -44,6 +44,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
     model = YourCustomDEModel(model_name=model_name)
 
     # Get tasks
+    #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
     tasks = coir.get_tasks(tasks=["stackoverflow-qa"])
 
     # Initialize evaluation
