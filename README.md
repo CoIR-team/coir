@@ -56,16 +56,16 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 ## Using the Python Package
 
-1. Install the `coir-evaluate` package
+1. Install the `coir-eval` package
 
     ```bash
-    pip install coir-evaluate
+    pip install coir-eval
     ```
 
 2. Use the following code to run the evaluation
 
     ```python
-    import coir_evaluate as coir
+    import coir
     from coir.data_loader import get_tasks
     from coir.evaluation import COIR
     from coir.models import YourCustomDEModel
