@@ -22,7 +22,7 @@
 
 
 
-## What is CoIR?
+## :coconut: What is CoIR?
 
 **CoIR** (**Co**de **I**nformation **R**etrieval) benchmark, is designed to evaluate code retrieval capabilities. CoIR includes **10** curated code datasets, covering **8** retrieval tasks across **7** domains. It also provides a **common and easy** Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
 
@@ -38,7 +38,7 @@ For more information, checkout out our **publication**: [COIR: A Comprehensive B
 
 
 
-## Data Availability
+## :coconut: Data Availability
 
 All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval)
 
@@ -61,7 +61,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 
 
-## Simple Use（python>3.8）
+## :coconut: Simple Use（python>3.8）
 
 1. Download this GitHub repository
 
@@ -88,7 +88,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 
 
-## Using the Python Package
+## :coconut: Using the Python Package
 
 1. Install the `coir-eval` package
 
@@ -123,7 +123,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 
 
-## Disclaimer
+## :coconut: Disclaimer
 
 Similar to Tensorflow [datasets](https://github.com/tensorflow/datasets) or Hugging Face's [datasets](https://github.com/huggingface/datasets) library, we just downloaded and prepared public datasets. We only distribute these datasets in a specific format, but we do not vouch for their quality or fairness, or claim that you have license to use the dataset. It remains the user's responsibility to determine whether you as a user have permission to use the dataset under the dataset's license and to cite the right owner of the dataset.
 
