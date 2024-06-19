@@ -140,7 +140,7 @@ If you're a dataset owner and wish to update any part of it, or do not want your
 If you're a dataset owner and wish to include your dataset or model in this library, feel free to post an issue here or make a pull request!
 
 
-## Citing & Authors
+## :coconut: Citing & Authors
 If you find this repository helpful, feel free to cite our publication [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](xxx):
 
 ```
