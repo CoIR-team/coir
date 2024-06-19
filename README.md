@@ -37,7 +37,6 @@ For more information, checkout out our **publication**: [COIR: A Comprehensive B
 </div>
 
 
-
 ## :coconut: Data Availability
 
 All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval)
@@ -63,66 +62,73 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 ## :coconut: Features
 
 
-## :coconut: Simple Use（python>3.8）
+## :coconut: Installation and Usage
 
-1. Download this GitHub repository
+### :coconut: Installation
 
-    ```python
-    import coir
-    from coir.models import YourCustomDEModel
-    
-    model_name = "intfloat/e5-base-v2"
-    
-    # Load the model
-    model = YourCustomDEModel(model_name=model_name)
-    
-    # Get tasks
-    #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
-    tasks = coir.get_tasks(tasks=["codetrans-dl"])
-    
-    # Initialize evaluation
-    evaluation = coir.COIR(tasks=tasks)
-    
-    # Run evaluation
-    results = evaluation.run(model, output_folder=f"results/{model_name}")
-    print(results)
-    ```
+Install the `coir-eval` package via pip:
 
+```bash
+pip install coir-eval
+```
 
+If you want to build from source, use:
 
-## :coconut: Using the Python Package
+```bash
+$ git clone git@github.com:CoIR-team/coir.git
+$ cd coir
+$ pip install -e .
+```
 
-1. Install the `coir-eval` package
+### :coconut: Simple Usage
 
-    ```bash
-    pip install coir-eval
-    ```
+If you have installed the `coir-eval` package, directly use the following code to run the evaluation:
 
-2. Use the following code to run the evaluation
+```python
+import coir
+from coir.data_loader import get_tasks
+from coir.evaluation import COIR
+from coir.models import YourCustomDEModel
 
-    ```python
-    import coir
-    from coir.data_loader import get_tasks
-    from coir.evaluation import COIR
-    from coir.models import YourCustomDEModel
-    
-    model_name = "intfloat/e5-base-v2"
-    
-    # Load the model
-    model = YourCustomDEModel(model_name=model_name)
-    
-    # Get tasks
-    #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
-    tasks = get_tasks(tasks=["codetrans-dl"])
-    
-    # Initialize evaluation
-    evaluation = COIR(tasks=tasks)
-    
-    # Run evaluation
-    results = evaluation.run(model, output_folder=f"results/{model_name}")
-    print(results)
-    ```
+model_name = "intfloat/e5-base-v2"
 
+# Load the model
+model = YourCustomDEModel(model_name=model_name)
+
+# Get tasks
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+tasks = get_tasks(tasks=["codetrans-dl"])
+
+# Initialize evaluation
+evaluation = COIR(tasks=tasks)
+
+# Run evaluation
+results = evaluation.run(model, output_folder=f"results/{model_name}")
+print(results)
+```
+
+You may also download this GitHub repository (`python>3.8`) and use as follows:
+
+```python
+import coir
+from coir.models import YourCustomDEModel
+
+model_name = "intfloat/e5-base-v2"
+
+# Load the model
+model = YourCustomDEModel(model_name=model_name)
+
+# Get tasks
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+tasks = coir.get_tasks(tasks=["codetrans-dl"])
+
+# Initialize evaluation
+evaluation = coir.COIR(tasks=tasks)
+
+# Run evaluation
+results = evaluation.run(model, output_folder=f"results/{model_name}")
+print(results)
+```
 
 
 ## :coconut: Disclaimer
