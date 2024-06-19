@@ -22,7 +22,7 @@
 
 
 
-# What is CoIR?
+## What is CoIR?
 
 **CoIR** (**Co**de **I**nformation **R**etrieval) benchmark, is designed to evaluate code retrieval capabilities. CoIR includes **10** curated code datasets, covering **8** retrieval tasks across **7** domains. It also provides a **common and easy** Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
 
@@ -38,7 +38,7 @@ For more information, checkout out our **publication**: [COIR: A Comprehensive B
 
 
 
-# Data Availability
+## Data Availability
 
 All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval)
 
@@ -140,3 +140,23 @@ If you find this repository helpful, feel free to cite our publication [COIR: A 
     xxx
 }
 ```
+
+## :coconut: Contributors
+
+Thanks go to all these wonderful collaborations for their contribution towards the CoIR benchmark:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/archersama"><img src="https://avatars.githubusercontent.com/u/14331643?v=4" width="100px;" alt=""/><br /><sub><b>Xiangyang Li</b></sub></a></td>
+    <td align="center"><a href="https://github.com/monikernemo"><img src="https://avatars.githubusercontent.com/u/34767152?v=4" width="100px;" alt=""/><br /><sub><b>Yi Quan Lee</b></sub></a></td>
+    <td align="center"><a href="https://github.com/daviddongkc"><img src="https://avatars.githubusercontent.com/u/37006388?v=4" width="100px;" alt=""/><br /><sub><b>Kuicai Dong</b></sub></a></td>
+    <td align="center"><a href="https://26hzhang.github.io"><img src="https://avatars.githubusercontent.com/u/20762516?v=4" width="100px;" alt=""/><br /><sub><b>Hao Zhang</b></sub></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
