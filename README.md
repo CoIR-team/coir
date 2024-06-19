@@ -1,22 +1,35 @@
-### Introduction to CoIR
+<h1 align="center">
+<img style="vertical-align:middle" width="400" src="pictures/coir_3.png" />
+</h1>
 
-Despite the success of Information Retrieval (IR) in various NLP tasks, most IR systems focus on natural language, neglecting code retrieval. Code retrieval is crucial but under-explored, with existing methods and benchmarks failing to capture the diversity of code across different domains and tasks.
 
-To address this, we present **CoIR** (**Co**de **I**nformation **R**etrieval Benchmark), a comprehensive benchmark designed to evaluate code retrieval capabilities. CoIR includes **ten** curated code datasets, covering **eight** retrieval tasks across **seven** domains.
 
-We constructed CoIR with diverse datasets and evaluated nine popular retrieval models, revealing significant challenges in code retrieval even for state-of-the-art systems. CoIR is a user-friendly Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
 
-Our goal with CoIR is to advance research in code retrieval, offering a versatile tool that encourages the development and exploration of code retrieval systems.
+# What is CoIR?
 
-## Data Availability
+**CoIR** (**Co**de **I**nformation **R**etrieval) benchmark, is designed to evaluate code retrieval capabilities. CoIR includes **10** curated code datasets, covering **8** retrieval tasks across **7** domains. It also provides a **common and easy** Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
+
+For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://huggingface.co/CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval).
+
+For more information, checkout out our **publication**: [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](linktobedo)
+
+<div align="center">
+    <img src="pictures/coir_overview.svg" width="850" />
+    <br>
+    <strong>Overview of COIR benchmark.</strong>
+</div>
+
+
+
+# Data Availability
 
 All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval)
 
 
 ### Statistics of datasets in coir benchmark
-\# is the quantity of query/corpus instances. \(L_{(\cdot)}\) refers to the average numbers of words per query/corpus. Datasets marked by \(^\dag\) are created by us.
+\# is the quantity of query/corpus instances. L refers to the average numbers of words per query/corpus. Datasets marked by \(^\dag\) are created by us.
 
-| **Main Task**                | **Sub Task**                       | **Domain**     | **Dataset**                  | **Language**                                   | **#Query (train/dev/test)** | **#Corpus** | **\(L_{\text{Query}}\)** | **\(L_{\text{Corpus}}\)** |
+| **Main Task**                | **Sub Task**                       | **Domain**     | **Dataset**                  | **Language**                                   | **#Query (train/dev/test)** | **#Corpus** | **L_Query** | **L_Corpus** |
 |------------------------------|------------------------------------|----------------|------------------------------|------------------------------------------------|-----------------------------|-------------|-------------------------|---------------------------|
 | Text-to-Code Retrieval       | Code Contest Retrieval             | Code Contest   | APPS                         | py                                             | 5k/-/3.8K                   | 9K          | 1.4K                    | 575                       |
 |                              | Web Query to Code Retrieval        | Web query      | CosQA                        | py                                             | 19k/-/500                   | 21K         | 37                      | 276                       |
@@ -30,6 +43,7 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 |                              | Multi-turn Code QA                 | Code Instruction | CodeFeeback-MT               | miscellaneous                                  | 53k/-/13K                   | 66K         | 4.4K                    | 1.5K                      |
 
 
+
 ## Simple Use（python>3.8）
 
 1. Download this GitHub repository
@@ -37,23 +51,25 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
     ```python
     import coir
     from coir.models import YourCustomDEModel
-
+    
     model_name = "intfloat/e5-base-v2"
-
+    
     # Load the model
     model = YourCustomDEModel(model_name=model_name)
-
+    
     # Get tasks
     #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
     tasks = coir.get_tasks(tasks=["codetrans-dl"])
-
+    
     # Initialize evaluation
     evaluation = coir.COIR(tasks=tasks)
-
+    
     # Run evaluation
     results = evaluation.run(model, output_folder=f"results/{model_name}")
     print(results)
     ```
+
+
 
 ## Using the Python Package
 
@@ -70,19 +86,19 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
     from coir.data_loader import get_tasks
     from coir.evaluation import COIR
     from coir.models import YourCustomDEModel
-
+    
     model_name = "intfloat/e5-base-v2"
-
+    
     # Load the model
     model = YourCustomDEModel(model_name=model_name)
-
+    
     # Get tasks
     #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
     tasks = get_tasks(tasks=["codetrans-dl"])
-
+    
     # Initialize evaluation
     evaluation = COIR(tasks=tasks)
-
+    
     # Run evaluation
     results = evaluation.run(model, output_folder=f"results/{model_name}")
     print(results)
@@ -90,3 +106,20 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 
 
+## Disclaimer
+
+Similar to Tensorflow [datasets](https://github.com/tensorflow/datasets) or Hugging Face's [datasets](https://github.com/huggingface/datasets) library, we just downloaded and prepared public datasets. We only distribute these datasets in a specific format, but we do not vouch for their quality or fairness, or claim that you have license to use the dataset. It remains the user's responsibility to determine whether you as a user have permission to use the dataset under the dataset's license and to cite the right owner of the dataset.
+
+If you're a dataset owner and wish to update any part of it, or do not want your dataset to be included in this library, feel free to post an issue here or make a pull request!
+
+If you're a dataset owner and wish to include your dataset or model in this library, feel free to post an issue here or make a pull request!
+
+
+## Citing & Authors
+If you find this repository helpful, feel free to cite our publication [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](xxx):
+
+```
+@misc{
+    xxx
+}
+```
