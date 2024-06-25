@@ -60,9 +60,10 @@ All data has been uploaded to our Hugging Face page: [CoIR-Retrieval](https://hu
 
 
 ## :coconut: Features
+- CoIR encompasses a total of ten distinct code retrieval datasets.
+- CoIR supports seamless integration with Hugging Face and other libraries, enabling one-click loading and evaluation of models.
+- CoIR supports custom models and API-based models, offering flexible integration options for diverse requirements.
 
-
-## :coconut: Installation and Usage
 
 ### :coconut: Installation
 
