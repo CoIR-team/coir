@@ -276,10 +276,8 @@ class APIModel:
 
 
     def encode_corpus(self, corpus: list, batch_size: int = 12, **kwargs) -> np.ndarray:
-        time.sleep(1)
         texts = [doc['text'][:512]  for doc in corpus]
         texts = ["passage: " + doc for doc in texts]
-        print(len(texts))
         return self.encode_text(texts, batch_size, input_type="document")
 
 # Load the model
