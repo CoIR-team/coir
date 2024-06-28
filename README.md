@@ -131,6 +131,167 @@ evaluation = COIR(tasks=tasks，batch_size=128)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
+### :coconut: Advanced Usage
+#### Custom Dense Retrieval Models
+```python
+import coir
+from coir.data_loader import get_tasks
+from coir.evaluation import COIR
+import torch
+import numpy as np
+import logging
+from transformers import AutoTokenizer, AutoModel
+from typing import List, Dict
+from tqdm.auto import tqdm
+
+class YourCustomDEModel:
+    def __init__(self, model_name="intfloat/e5-base-v2", **kwargs):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name).to(device)
+        self.model_name = model_name
+        self.tokenizer.add_eos_token = False
+
+    def mean_pooling(self, model_output, attention_mask):
+        token_embeddings = model_output[0]  # First element of model_output contains all token embeddings
+        input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+        sum_embeddings = torch.sum(token_embeddings * input_mask_expanded, 1)
+        sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+        return sum_embeddings / sum_mask
+
+    def cls_pooling(self, model_output, attention_mask):
+        # First element of model_output contains all token embeddings
+        token_embeddings = model_output[0]
+        # Extract the CLS token's embeddings (index 0) for each sequence in the batch
+        cls_embeddings = token_embeddings[:, 0, :]
+        return cls_embeddings
+
+    def last_token_pool(self, model_output, attention_mask):
+        last_hidden_states = model_output.last_hidden_state
+        left_padding = (attention_mask[:, -1].sum() == attention_mask.shape[0])
+        if left_padding:
+            return last_hidden_states[:, -1]
+        else:
+            sequence_lengths = attention_mask.sum(dim=1) - 1
+            batch_size = last_hidden_states.shape[0]
+            return last_hidden_states[torch.arange(batch_size, device=last_hidden_states.device), sequence_lengths]
+
+    def encode_text(self, texts: List[str], batch_size: int = 12, max_length: int = 128) -> np.ndarray:
+        logging.info(f"Encoding {len(texts)} texts...")
+
+        embeddings = []
+        for i in tqdm(range(0, len(texts), batch_size), desc="Encoding batches", unit="batch"):
+            batch_texts = texts[i:i+batch_size]
+            encoded_input = self.tokenizer(batch_texts, padding=True, truncation=True, max_length=max_length, return_tensors="pt").to(device)
+            with torch.no_grad():
+                model_output = self.model(**encoded_input)
+            batch_embeddings = self.mean_pooling(model_output, encoded_input['attention_mask'])
+            embeddings.append(batch_embeddings.cpu())
+
+        embeddings = torch.cat(embeddings, dim=0)
+
+        if embeddings is None:
+            logging.error("Embeddings are None.")
+        else:
+            logging.info(f"Encoded {len(embeddings)} embeddings.")
+
+        return embeddings.numpy()
+
+    def encode_queries(self, queries: List[str], batch_size: int = 12, max_length: int = 512, **kwargs) -> np.ndarray:
+        all_queries = ["query: "+ query for query in queries]
+        return self.encode_text(all_queries, batch_size, max_length)
+
+    def encode_corpus(self, corpus: List[Dict[str, str]], batch_size: int = 12, max_length: int = 512, **kwargs) -> np.ndarray:
+        all_texts = ["passage: "+ doc['text'] for doc in corpus]
+        return self.encode_text(all_texts, batch_size, max_length)
+
+ Load the model
+model = YourCustomDEModel()
+
+# Get tasks
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+tasks = coir.get_tasks(tasks=["codetrans-dl"])
+
+# Initialize evaluation
+evaluation = COIR(tasks=tasks，batch_size=128)
+
+# Run evaluation
+results = evaluation.run(model, output_folder=f"results/{model_name}")
+print(results)
+```
+#### Custom API Retrieval Models
+import coir
+from coir.data_loader import get_tasks
+from coir.evaluation import COIR
+import torch
+import numpy as np
+import logging
+from transformers import AutoTokenizer, AutoModel
+from typing import List, Dict
+from tqdm.auto import tqdm
+
+class APIModel:
+    def __init__(self, model_name="voyage-code-2", **kwargs):
+        # Initialize the voyageai client
+        self.vo = voyageai.Client(api_key="xxxx")  # This uses VOYAGE_API_KEY from environment
+        self.model_name = model_name
+        self.requests_per_minute = 300  # Max requests per minute
+        self.delay_between_requests = 60 / self.requests_per_minute  # Delay in seco
+
+    def encode_text(self, texts: list, batch_size: int = 12, input_type: str = "document") -> np.ndarray:
+        logging.info(f"Encoding {len(texts)} texts...")
+
+        all_embeddings = []
+        start_time = time.time()
+        # Processing texts in batches
+        for i in tqdm(range(0, len(texts), batch_size), desc="Encoding batches", unit="batch"):
+            batch_texts = texts[i:i + batch_size]
+            result = self.vo.embed(batch_texts, model=self.model_name, input_type=input_type,truncation=True)
+            batch_embeddings = result.embeddings  # Assume the API directly returns embeddings
+            all_embeddings.extend(batch_embeddings)
+            # Ensure we do not exceed rate limits
+            time_elapsed = time.time() - start_time
+            if time_elapsed < self.delay_between_requests:
+                time.sleep(self.delay_between_requests - time_elapsed)
+                start_time = time.time()
+
+        # Combine all embeddings into a single numpy array
+        embeddings_array = np.array(all_embeddings)
+
+        # Logging after encoding
+        if embeddings_array.size == 0:
+            logging.error("No embeddings received.")
+        else:
+            logging.info(f"Encoded {len(embeddings_array)} embeddings.")
+
+        return embeddings_array
+
+    def encode_queries(self, queries: list, batch_size: int = 12, **kwargs) -> np.ndarray:
+        truncated_queries = [query[:256] for query in queries]
+        truncated_queries = ["query: " + query for query in truncated_queries]
+        query_embeddings = self.encode_text(truncated_queries, batch_size, input_type="query")
+        return query_embeddings
+
+
+    def encode_corpus(self, corpus: list, batch_size: int = 12, **kwargs) -> np.ndarray:
+        time.sleep(1)
+        texts = [doc['text'][:512]  for doc in corpus]
+        texts = ["passage: " + doc for doc in texts]
+        print(len(texts))
+        return self.encode_text(texts, batch_size, input_type="document")
+
+ Load the model
+model = APIModel()
+
+# Get tasks
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+tasks = coir.get_tasks(tasks=["codetrans-dl"])
+
+# Initialize evaluation
+evaluation = COIR(tasks=tasks，batch_size=128)
+
+# Run evaluation
+results = evaluation.run(model, output_folder=f"results/{model_name}")
+print(results)
 
 
 ## :coconut: Disclaimer
