@@ -98,7 +98,7 @@ model = YourCustomDEModel(model_name=model_name)
 
 # Get tasks
 #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
- text2sql","cosq","codesearchnet","codesearchnet-ccr",]
+ text2sql","cosq","codesearchnet","codesearchnet-ccr"]
 tasks = get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
@@ -121,7 +121,8 @@ model_name = "intfloat/e5-base-v2"
 model = YourCustomDEModel(model_name=model_name)
 
 # Get tasks
-#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
+ text2sql","cosq","codesearchnet","codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
@@ -204,11 +205,12 @@ class YourCustomDEModel:
         all_texts = ["passage: "+ doc['text'] for doc in corpus]
         return self.encode_text(all_texts, batch_size, max_length)
 
- Load the model
+# Load the model
 model = YourCustomDEModel()
 
 # Get tasks
-#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
+ text2sql","cosq","codesearchnet","codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
@@ -280,11 +282,12 @@ class APIModel:
         print(len(texts))
         return self.encode_text(texts, batch_size, input_type="document")
 
- Load the model
+# Load the model
 model = APIModel()
 
 # Get tasks
-#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-text2sql","cosq"]
+#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
+ text2sql","cosq","codesearchnet","codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
