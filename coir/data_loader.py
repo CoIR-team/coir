@@ -73,10 +73,39 @@ def load_data_from_hf(task_name):
         logger.error(f"Failed to load data for task {task_name}: {e}")
         return None
 
+# def get_tasks(tasks: list):
+#     all_tasks = {}
+#     for task in tasks:
+#         task_data = load_data_from_hf(task)
+#         if task_data is not None:
+#             all_tasks[task] = task_data
+#     return all_tasks
+
+
 def get_tasks(tasks: list):
     all_tasks = {}
+
+    # Define sub-tasks for special cases
+    special_tasks = {
+        "codesearchnet": [
+            "CodeSearchNet-go", "CodeSearchNet-java", "CodeSearchNet-javascript",
+            "CodeSearchNet-ruby", "CodeSearchNet-python", "CodeSearchNet-php"
+        ],
+        "codesearchnet-ccr": [
+            "CodeSearchNet-ccr-go", "CodeSearchNet-ccr-java", "CodeSearchNet-ccr-javascript",
+            "CodeSearchNet-ccr-ruby", "CodeSearchNet-ccr-python", "CodeSearchNet-ccr-php"
+        ]
+    }
+
     for task in tasks:
-        task_data = load_data_from_hf(task)
-        if task_data is not None:
-            all_tasks[task] = task_data
+        if task in special_tasks:
+            for sub_task in special_tasks[task]:
+                task_data = load_data_from_hf(sub_task)
+                if task_data is not None:
+                    all_tasks[sub_task] = task_data
+        else:
+            task_data = load_data_from_hf(task)
+            if task_data is not None:
+                all_tasks[task] = task_data
+
     return all_tasks
