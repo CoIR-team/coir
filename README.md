@@ -219,6 +219,7 @@ results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
 #### Custom API Retrieval Models
+```python
 import coir
 from coir.data_loader import get_tasks
 from coir.evaluation import COIR
@@ -292,6 +293,7 @@ evaluation = COIR(tasks=tasks，batch_size=128)
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
+```
 
 
 ## :coconut: Disclaimer
