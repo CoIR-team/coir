@@ -134,7 +134,8 @@ print(results)
 ```
 ### :coconut: Advanced Usage
 <details>
-  <summary>点击展开/折叠内容</summary>
+  <summary>Click to Expand/Collapse Content</summary>
+    
 #### Custom Dense Retrieval Models
 ```python
 import coir
