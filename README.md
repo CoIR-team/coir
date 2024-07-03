@@ -223,6 +223,56 @@ evaluation = COIR(tasks=tasks，batch_size=128)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
+#### Using Sentence-Transformers Models
+```python
+import coir
+from coir.data_loader import get_tasks
+from coir.evaluation import COIR
+import torch
+import numpy as np
+import logging
+from sentence_transformers import SentenceTransformer
+from typing import List, Dict
+from tqdm.auto import tqdm
+
+class YourCustomDEModel:
+    def __init__(self, model_name="intfloat/e5-base-v2", **kwargs):
+        self.model = SentenceTransformer(model_name)
+
+    def encode_text(self, texts: List[str], batch_size: int = 12, show_progress_bar: bool = True, **kwargs) -> np.ndarray:
+        logging.info(f"Encoding {len(texts)} texts...")
+        
+        embeddings = self.model.encode(texts, batch_size=batch_size, show_progress_bar=show_progress_bar, **kwargs)
+        
+        if embeddings is None:
+            logging.error("Embeddings are None.")
+        else:
+            logging.info(f"Encoded {len(embeddings)} embeddings.")
+        
+        return np.array(embeddings)
+
+    def encode_queries(self, queries: List[str], batch_size: int = 12, show_progress_bar: bool = True, **kwargs) -> np.ndarray:
+        all_queries = ["query: "+ query for query in queries]
+        return self.encode_text(all_queries, batch_size, show_progress_bar, **kwargs)
+
+    def encode_corpus(self, corpus: List[Dict[str, str]], batch_size: int = 12, show_progress_bar: bool = True, **kwargs) -> np.ndarray:
+        all_texts = ["passage: "+ doc['text'] for doc in corpus]
+        return self.encode_text(all_texts, batch_size, show_progress_bar, **kwargs)
+
+# Load the model
+model = YourCustomDEModel()
+
+# Get tasks
+tasks = coir.get_tasks(tasks=["codetrans-dl"])
+
+# Initialize evaluation
+evaluation = COIR(tasks=tasks, batch_size=128)
+
+# Run evaluation
+results = evaluation.run(model, output_folder=f"results/{model.model_name}")
+print(results)
+```
+
 #### Custom API Retrieval Models
 ```python
 import coir
