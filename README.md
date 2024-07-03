@@ -132,9 +132,9 @@ evaluation = COIR(tasks=tasks，batch_size=128)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
+### :coconut: Advanced Usage
 <details>
-
-<summary>### :coconut: Advanced Usage
+  <summary>点击展开/折叠内容</summary>
 #### Custom Dense Retrieval Models
 ```python
 import coir
@@ -297,7 +297,7 @@ evaluation = COIR(tasks=tasks，batch_size=128)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
-</summary>
+
 </details> ```
 
 ## :coconut: Disclaimer
