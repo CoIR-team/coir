@@ -73,15 +73,6 @@ def load_data_from_hf(task_name):
         logger.error(f"Failed to load data for task {task_name}: {e}")
         return None
 
-# def get_tasks(tasks: list):
-#     all_tasks = {}
-#     for task in tasks:
-#         task_data = load_data_from_hf(task)
-#         if task_data is not None:
-#             all_tasks[task] = task_data
-#     return all_tasks
-
-
 def get_tasks(tasks: list):
     all_tasks = {}
 

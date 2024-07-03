@@ -14,6 +14,7 @@ class YourCustomDEModel:
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModel.from_pretrained(model_name).to(device)
         self.model_name = model_name
+        self.tokenizer.add_eos_token = False
 
     def mean_pooling(self, model_output, attention_mask):
         token_embeddings = model_output[0]  # First element of model_output contains all token embeddings
@@ -21,6 +22,23 @@ class YourCustomDEModel:
         sum_embeddings = torch.sum(token_embeddings * input_mask_expanded, 1)
         sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
         return sum_embeddings / sum_mask
+
+    def cls_pooling(self, model_output, attention_mask):
+        # First element of model_output contains all token embeddings
+        token_embeddings = model_output[0]
+        # Extract the CLS token's embeddings (index 0) for each sequence in the batch
+        cls_embeddings = token_embeddings[:, 0, :]
+        return cls_embeddings
+
+    def last_token_pool(self, model_output, attention_mask):
+        last_hidden_states = model_output.last_hidden_state
+        left_padding = (attention_mask[:, -1].sum() == attention_mask.shape[0])
+        if left_padding:
+            return last_hidden_states[:, -1]
+        else:
+            sequence_lengths = attention_mask.sum(dim=1) - 1
+            batch_size = last_hidden_states.shape[0]
+            return last_hidden_states[torch.arange(batch_size, device=last_hidden_states.device), sequence_lengths]
 
     def encode_text(self, texts: List[str], batch_size: int = 12, max_length: int = 128) -> np.ndarray:
         logging.info(f"Encoding {len(texts)} texts...")
