@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="coir-eval",
-    version="0.5.0",
+    version="0.7.0",
     author="xiangyang Li",
     author_email="xiangyangli@pku.edu.cn",
     description="A package for COIR evaluations",
@@ -27,6 +27,7 @@ setup(
         "tqdm>1.0.0",
         "rich>=0.0.0",
         "faiss_cpu",
-        "pytrec-eval-terrier>=0.5.6"
+        "pytrec-eval-terrier>=0.5.6",
+        "voyageai"
     ],
 )
