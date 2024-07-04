@@ -361,11 +361,17 @@ If you're a dataset owner and wish to include your dataset or model in this libr
 
 
 ## :coconut: Citing & Authors
-If you find this repository helpful, feel free to cite our publication [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](xxx):
+If you find this repository helpful, feel free to cite our publication [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883):
 
 ```
-@misc{
-    xxx
+@misc{li2024coircomprehensivebenchmarkcode,
+      title={CoIR: A Comprehensive Benchmark for Code Information Retrieval Models}, 
+      author={Xiangyang Li and Kuicai Dong and Yi Quan Lee and Wei Xia and Yichun Yin and Hao Zhang and Yong Liu and Yasheng Wang and Ruiming Tang},
+      year={2024},
+      eprint={2407.02883},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2407.02883}, 
 }
 ```
 
