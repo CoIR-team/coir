@@ -32,7 +32,7 @@ For **submit your models performance to coir leaderboard**, following this [**In
 
 For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://huggingface.co/CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval).
 
-For more information, checkout out our **publication**: [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)
+For more information, checkout out our **publication**: [CoIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)
 
 <div align="center">
     <img src="pictures/coir_overview.svg" width="850" />
