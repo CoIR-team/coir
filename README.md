@@ -12,7 +12,7 @@
     <a href="https://github.com/CoIR-team/coir/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/beir-cellar/beir.svg?color=green">
     </a>
-    <a href="xxxxxxxxxx">
+    <a href="https://colab.research.google.com/drive/1CSNOdb8h0o-ToRNntIzGjONVdYmVPY2M">
         <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg">
     </a>
     <a href="https://github.com/CoIR-team/coir">
