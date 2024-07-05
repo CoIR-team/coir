@@ -28,11 +28,11 @@
 
 For **models leaderboard**, checkout out **leaderboard** page: [**CoIR Leaderboard**](https://archersama.github.io/coir/). 
 
-For **submit your models performance to coir leaderboard**, following this [**instruction**](https://github.com/CoIR-team/coir/issues/2)
+For **submit your models performance to coir leaderboard**, following this [**Instruction**](https://github.com/CoIR-team/coir/issues/2)
 
 For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://huggingface.co/CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval).
 
-For more information, checkout out our **publication**: [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](linktobedo)
+For more information, checkout out our **publication**: [COIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)
 
 <div align="center">
     <img src="pictures/coir_overview.svg" width="850" />
