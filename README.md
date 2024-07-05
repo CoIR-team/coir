@@ -26,7 +26,9 @@
 
 **CoIR** (**Co**de **I**nformation **R**etrieval) benchmark, is designed to evaluate code retrieval capabilities. CoIR includes **10** curated code datasets, covering **8** retrieval tasks across **7** domains. It also provides a **common and easy** Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
 
-For **models leaderboard**, checkout out **leaderboard** page: [**CoIR Leaderboard**](https://archersama.github.io/coir/).
+For **models leaderboard**, checkout out **leaderboard** page: [**CoIR Leaderboard**](https://archersama.github.io/coir/). 
+
+For **submit your models performance to coir leaderboard**, following this [**instruction**](https://github.com/CoIR-team/coir/issues/2)
 
 For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://huggingface.co/CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval).
 
