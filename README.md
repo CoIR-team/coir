@@ -106,7 +106,7 @@ model = YourCustomDEModel(model_name=model_name)
 tasks = get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
-evaluation = COIR(tasks=tasks，batch_size=128)
+evaluation = COIR(tasks=tasks,batch_size=128)
 
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
@@ -130,7 +130,7 @@ model = YourCustomDEModel(model_name=model_name)
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
-evaluation = COIR(tasks=tasks，batch_size=128)
+evaluation = COIR(tasks=tasks,batch_size=128)
 
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
@@ -221,7 +221,7 @@ model = YourCustomDEModel()
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
-evaluation = COIR(tasks=tasks，batch_size=128)
+evaluation = COIR(tasks=tasks,batch_size=128)
 
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
@@ -341,12 +341,12 @@ class APIModel:
 model = APIModel()
 
 # Get tasks
-#all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
-# text2sql","cosq","codesearchnet","codesearchnet-ccr"]
+#all task ["codetrans-dl", "stackoverflow-qa", "apps","codefeedback-mt", "codefeedback-st", "codetrans-contest", "synthetic-
+# text2sql", "cosq", "codesearchnet", "codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
-evaluation = COIR(tasks=tasks，batch_size=128)
+evaluation = COIR(tasks=tasks, batch_size=128)
 
 # Run evaluation
 results = evaluation.run(model, output_folder=f"results/{model_name}")
