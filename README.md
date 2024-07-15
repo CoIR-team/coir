@@ -126,7 +126,7 @@ model = YourCustomDEModel(model_name=model_name)
 
 # Get tasks
 #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
-# text2sql","cosq","codesearchnet","codesearchnet-ccr"]
+# text2sql","cosqa","codesearchnet","codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
@@ -217,7 +217,7 @@ model = YourCustomDEModel()
 
 # Get tasks
 #all task ["codetrans-dl","stackoverflow-qa","apps","codefeedback-mt","codefeedback-st","codetrans-contest","synthetic-
-# text2sql","cosq","codesearchnet","codesearchnet-ccr"]
+# text2sql","cosqa","codesearchnet","codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
@@ -342,7 +342,7 @@ model = APIModel()
 
 # Get tasks
 #all task ["codetrans-dl", "stackoverflow-qa", "apps","codefeedback-mt", "codefeedback-st", "codetrans-contest", "synthetic-
-# text2sql", "cosq", "codesearchnet", "codesearchnet-ccr"]
+# text2sql", "cosqa", "codesearchnet", "codesearchnet-ccr"]
 tasks = coir.get_tasks(tasks=["codetrans-dl"])
 
 # Initialize evaluation
