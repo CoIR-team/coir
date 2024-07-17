@@ -31,6 +31,8 @@ For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://h
 
 For more information, checkout out our **publication**: [CoIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)
 
+If you have some data 📊 or code 💻 or other questions ❓, welcome to submit issues or PRs 🙌.
+
 <div align="center">
     <img src="pictures/coir_overview.svg" width="850" />
     <br>
