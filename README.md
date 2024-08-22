@@ -19,6 +19,15 @@
 
 
 
+# Update Notice 
+
+ **August 22, 2024**  🎉 We are pleased to announce that our work has been integrated into the MTEB (Massive Text Embedding Benchmark). You can now use the MTEB framework to evaluate CoIR datasets. 🚀
+ 
+ [Learn how to use MTEB with our datasets](#coconut-mteb-usage)
+
+
+
+
 ## :coconut: What is CoIR?
 
 **CoIR** (**Co**de **I**nformation **R**etrieval) benchmark, is designed to evaluate code retrieval capabilities. CoIR includes **10** curated code datasets, covering **8** retrieval tasks across **7** domains.  In total, it encompasses two million documents. It also provides a **common and easy** Python framework, installable via pip, and shares the same data schema as benchmarks like MTEB and BEIR for easy cross-benchmark evaluations.
@@ -135,6 +144,44 @@ evaluation = COIR(tasks=tasks,batch_size=128)
 results = evaluation.run(model, output_folder=f"results/{model_name}")
 print(results)
 ```
+### :coconut: MTEB Usage
+```python
+import mteb
+import logging
+from sentence_transformers import SentenceTransformer
+from mteb import MTEB
+
+logger = logging.getLogger(__name__)
+
+model_name = 'intfloat/e5-base-v2'
+model = SentenceTransformer(model_name)
+tasks = mteb.get_tasks(
+    tasks=[
+        "AppsRetrieval",
+        "CodeFeedbackMT",
+        "CodeFeedbackST",
+        "CodeTransOceanContest",
+        "CodeTransOceanDL",
+        "CosQA",
+        "SyntheticText2SQL",
+        "StackOverflowQA",
+        "COIRCodeSearchNetRetrieval",
+        "CodeSearchNetCCRetrieval",
+    ]
+)
+evaluation = MTEB(tasks=tasks)
+results = evaluation.run(
+    model=model,
+    overwrite_results=True
+)
+print(result)
+```
+
+
+
+
+
+
 ### :coconut: Advanced Usage
 <details>
   <summary>Click to Expand/Collapse Content</summary>
