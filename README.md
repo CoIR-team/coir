@@ -21,9 +21,9 @@
 
 # Update Notice 
 
- **August 22, 2024**  🎉 We are pleased to announce that our work has been integrated into the MTEB (Massive Text Embedding Benchmark). You can now use the MTEB framework to evaluate CoIR datasets. 🚀
- 
- [Learn how to use MTEB with our datasets](#coconut-mteb-usage)
+**August 22, 2024** 🎉 We are pleased to announce that our work has been integrated into the [**MTEB** (Massive Text Embedding Benchmark)](https://github.com/embeddings-benchmark/mteb). You can now use the MTEB framework to evaluate CoIR datasets. 🚀
+
+[Learn how to use MTEB with our datasets](#coconut-mteb-usage)
 
 
 
