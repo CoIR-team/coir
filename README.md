@@ -21,7 +21,7 @@
 
 # News
 
-**Sep 12, 2024** 🎉  We are pleased to announce that the **[download count]((https://huggingface.co/CoIR-Retrieval))** of CoIR has surpassed that of CodeSearchNet, establishing it as one of the most popular code retrieval benchmarks within the community.
+**Sep 12, 2024** 🎉  We are pleased to announce that the **[download count](https://huggingface.co/CoIR-Retrieval)** of CoIR has surpassed that of CodeSearchNet, establishing it as one of the most popular code retrieval benchmarks within the community. 🚀
 
 **August 22, 2024** 🎉 We are pleased to announce that our work has been integrated into the [**MTEB** (Massive Text Embedding Benchmark)](https://github.com/embeddings-benchmark/mteb). You can now use the MTEB framework to evaluate CoIR datasets. 🚀
 
