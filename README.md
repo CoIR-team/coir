@@ -21,6 +21,8 @@
 
 # News
 
+**Sep 13, 2024** 🎉  We are pleased to announce that the CoIR Leadboard is now available on the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard). You can now submit your results on the MTEB [MTEB](https://huggingface.co/spaces/mteb/leaderboard) or [CoIR](https://archersama.github.io/coir/) Leaderboard. 🚀
+
 **Sep 12, 2024** 🎉  We are pleased to announce that the **[month download count](https://huggingface.co/CoIR-Retrieval)** of CoIR has surpassed that of CodeSearchNet, establishing it as one of the most popular code retrieval benchmarks within the community. 🚀
 
 **August 22, 2024** 🎉 We are pleased to announce that our work has been integrated into the [**MTEB** (Massive Text Embedding Benchmark)](https://github.com/embeddings-benchmark/mteb). You can now use the MTEB framework to evaluate CoIR datasets. 🚀
