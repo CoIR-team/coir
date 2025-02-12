@@ -17,6 +17,13 @@
     </a>
 </p>
 
+## 💥 Impact
+CoIR has been trusted by many  teams including:
+- Salesforce
+- E5
+- BGE
+- Voyage AI
+- NV-Embed
 
 
 # News
