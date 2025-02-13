@@ -24,6 +24,7 @@ CoIR has been trusted by many  teams including:
 - BGE
 - Voyage AI
 - NV-Embed
+- GTE
 
 
 # News
