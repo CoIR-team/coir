@@ -17,14 +17,27 @@
     </a>
 </p>
 
-## 💥 Impact
-CoIR has been trusted by many  teams including:
-- Salesforce
-- E5
-- BGE
-- Voyage AI
-- NV-Embed
-- GTE
+<div style="margin: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+  <h2 style="font-size: 36px; font-weight: bold; color: #333; margin-bottom: 20px;">💥 Impact</h2>
+  <p style="font-size: 20px; color: #555; margin-bottom: 15px;">CoIR has been trusted by many teams including:</p>
+  <ul style="list-style: none; padding: 0;">
+    <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/Salesforce/SFR-Embedding-Code-2B_R" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Salesforce</a>
+    </li>
+    <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://blog.voyageai.com/2024/12/04/voyage-code-3/" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Voyage</a>
+    </li>
+    <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/Alibaba-NLP/gte-modernbert-base" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">GTE</a>
+    </li>
+    <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">NV-Embed</a>
+    </li>
+    <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">OpenAI</a>
+    </li>
+  </ul>
+</div>
 
 
 # News
