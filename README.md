@@ -68,7 +68,10 @@ For **submit your models performance to mteb leaderboard**, following this [**In
 
 For **models and datasets**, checkout out **Hugging Face (HF)** page: [https://huggingface.co/CoIR-Retrieval](https://huggingface.co/CoIR-Retrieval).
 
+
 For more information, checkout out our **publication**: [CoIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)
+
+Why the Results on the MTEB and CoIR Leaderboards **Differ**? [Look this issue](https://github.com/CoIR-team/coir/issues/17)
 
 If you have some data  or code  or other questions ❓, welcome to submit issues or PRs 🙌.
 
