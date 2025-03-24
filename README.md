@@ -36,6 +36,9 @@
     <li style="font-size: 22px; margin-bottom: 12px;">
       <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">OpenAI</a>
     </li>
+     <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Google</a>
+    </li>
   </ul>
 </div>
 
