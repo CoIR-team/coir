@@ -44,6 +44,8 @@
 
 
 # News
+**May 18, 2025** 🎉Congratulations on our paper **CoIR** being accepted by ACL 2025 Main.
+
 **Feb 18, 2025** 🎉 Congratulations to **Salesforce** for Achieving the First Rank on the [CoIR Leaderboard](https://archersama.github.io/coir/)!
 
 **Sep 13, 2024** 🎉  We are pleased to announce that the CoIR Leadboard is now available on the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard). You can now submit your results on the MTEB [MTEB](https://huggingface.co/spaces/mteb/leaderboard) or [CoIR](https://archersama.github.io/coir/) Leaderboard. 🚀
