@@ -44,7 +44,7 @@
 
 
 # News
-**May 18, 2025** 🎉Congratulations on our paper **CoIR** being accepted by ACL 2025 Main.
+**May 18, 2025** 🎉Congratulations on our paper **CoIR** being accepted by **ACL 2025 Main**.
 
 **Feb 18, 2025** 🎉 Congratulations to **Salesforce** for Achieving the First Rank on the [CoIR Leaderboard](https://archersama.github.io/coir/)!
 
