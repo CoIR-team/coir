@@ -50,6 +50,8 @@
 
 
 # News
+**June 17, 2025** 🎉Congratulations on checking out our new Code Generation LLM Leaderboard [HLCE](https://github.com/Humanity-s-Last-Code-Exam/HLCE). This leaderboard is quite challenging, and even O4-mini(high) can only achieve a 15.8 pass@1.
+
 **May 18, 2025** 🎉Congratulations on our paper **CoIR** being accepted by **ACL 2025 Main**.
 
 **Feb 18, 2025** 🎉 Congratulations to **Salesforce** for Achieving the First Rank on the [CoIR Leaderboard](https://archersama.github.io/coir/)!
