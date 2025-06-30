@@ -21,8 +21,11 @@
   <h2 style="font-size: 36px; font-weight: bold; color: #333; margin-bottom: 20px;">💥 Impact</h2>
   <p style="font-size: 20px; color: #555; margin-bottom: 15px;">CoIR has been trusted by many teams including:</p>
   <ul style="list-style: none; padding: 0;">
+ <li style="font-size: 22px; margin-bottom: 12px;">
+      <a href="https://huggingface.co/jinaai/jina-embeddings-v4" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Jina Embeddings</a>
+    </li>
     <li style="font-size: 22px; margin-bottom: 12px;">
-      <a href="https://qwenlm.github.io/blog/qwen3-embedding/" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Qwen3-Embedding</a>
+      <a href="https://qwenlm.github.io/blog/qwen3-embedding" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">Qwen3-Embedding</a>
     </li>
     <li style="font-size: 22px; margin-bottom: 12px;">
       <a href="https://huggingface.co/BAAI/bge-code-v1" target="_blank" style="color: #3366cc; text-decoration: none; font-weight: bold;">BGE</a>
